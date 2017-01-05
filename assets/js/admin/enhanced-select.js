@@ -54,7 +54,7 @@ jQuery( function( $ ) {
 
 	function getEnhancedSelectFormatIcon( icon ) {
 		if ( icon.id && $( icon.element ).data( 'icon' ) ) {
-			return $( '<span><i class="fa ' + $( icon.element ).data( 'icon' ) + '"></i> ' + icon.text + '</span>' );
+			return $( '<span class="fa ' + $( icon.element ).data( 'icon' ) + '"></span>' ).append( icon.text );
 		}
 
 		return icon.text;
