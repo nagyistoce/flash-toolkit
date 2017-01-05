@@ -52,9 +52,9 @@ jQuery( function( $ ) {
 		return formatString;
 	}
 
-	function getEnhancedSelectFormatResult( icon ) {
+	function getEnhancedSelectFormatIcon( icon ) {
 		if ( icon.id && $( icon.element ).data( 'icon' ) ) {
-			return '<i class="fa ' + $( icon.element ).data( 'icon' ) + '"></i> ' + icon.text;
+			return $( '<span><i class="fa ' + $( icon.element ).data( 'icon' ) + '"></i> ' + icon.text + '</span>' );
 		}
 
 		return icon.text;
@@ -90,7 +90,7 @@ jQuery( function( $ ) {
 					minimumResultsForSearch: 10,
 					allowClear:  true,
 					placeholder: $( this ).data( 'placeholder' ),
-					formatResult: getEnhancedSelectFormatResult
+					templateResult: getEnhancedSelectFormatIcon
 				}, getEnhancedSelectFormatString() );
 
 				$( this ).select2( select2_args ).addClass( 'enhanced' );
